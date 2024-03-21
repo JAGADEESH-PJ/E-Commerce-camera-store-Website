@@ -1,0 +1,561 @@
+
+
+/* Universal Styles */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+body {
+    background: linear-gradient(90deg, #C33764, #1D2671, #0000ff);
+    background-size: 200% 200%;
+    animation: gradientShift  ease infinite;
+}
+
+.hero-banner {
+  background-image: url('C:\Users\jagad\Downloads\HERO BANNAER.jpg');
+  background-size: cover;
+  text-align: center;
+  padding: 50px;
+}
+
+
+
+
+/* CSS for Mega Menu */
+.mega-menu {
+    width: 100%;
+    background-color: #fff; /* Adjust as needed */
+    z-index: 1000; /* Ensure it's above other content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: top 0.3s ease; /* Smooth transition */
+}
+
+.mega-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mega-menu li {
+    display: inline-block;
+}
+
+.mega-menu a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333; /* Adjust as needed */
+}
+
+.menu-toggle {
+    display: none; /* Initially hidden on large screens */
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 768px) {
+    .mega-menu ul {
+        display: none; /* Hide the menu items by default */
+    }
+
+    .menu-toggle {
+        display: block; /* Display the menu toggle button */
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .menu-open .mega-menu ul {
+        display: block; /* Display the menu items when menu is open */
+    }
+}
+
+
+
+/* Navigation Styles */
+.navlist {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff; /* Adjust background color as needed */
+    z-index: 1000; /* Ensure it's above other content */
+    padding: 10px 0; /* Adjust padding as needed */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navlist li {
+    display: inline-block;
+    margin-right: 20px; /* Adjust spacing between menu items */
+}
+
+.navlist li:last-child {
+    margin-right: 0; /* Remove margin from the last menu item */
+}
+
+.navlist li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #333; /* Adjust text color as needed */
+    padding: 10px 20px; /* Adjust padding as needed */
+}
+
+.navlist li:hover a {
+    color: #fff; /* Change text color on hover */
+    background-color: #333; /* Change background color on hover */
+}
+
+.navlist li a::after,
+.navlist .active::after {
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    height: .1rem;
+    left: 0;
+    bottom: -5px;
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: transform .5s;
+}
+
+.navlist li a:hover::after,
+.navlist .active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Hero Banner Styles */
+
+.hero-banner {
+    background-image: url('hero.jpg'); /* Replace 'path/to/your/image.jpg' with the correct relative path or URL to your image */
+    background-size: cover; /* Adjust background size as needed */
+    background-position: center; /* Adjust background position as needed */
+    text-align: center;
+    padding: 100px 0; /* Adjust padding as needed */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center the content */
+    
+}
+
+
+
+.hero-content {
+    max-width: 600px; /* Adjust maximum width as needed */
+    margin: 0 auto;
+    margin-bottom: 20px; /* Adjust spacing between elements */
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #0c0000; /* Change the color of the h1 text */
+    }
+
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #ffffff; /* Change the color of the h1 text */
+    }
+
+
+    .shop-now-button {
+        background-color: #f02424; /* Set background color */
+        color: #fbfbfb; /* Set text color */
+        padding: 10px 20px;
+        border: 2px solid #ef8888; /* Add border */
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 20px;
+        cursor: pointer; /* Change cursor to pointer on hover */
+        transition: background-color 0.1s ease, color 0.1s ease; /* Add transition for background color and text color */
+    }
+    
+    .shop-now-button:hover {
+        background-color: #090000; /* Change background color on hover */
+        color: #fff; /* Change text color on hover */
+        text-shadow: 0 0 10px #00f0ff, 0 0 20px #ff00f5, 0 0 30px #ff0068, 0 0 40px #ff0000; /* Neon text effect */
+        box-shadow: 0 0 20px #00f0ff, 0 0 40px #ff00f5, 0 0 60px #ff0068, 0 0 80px #ff0000; /* Neon box shadow effect */
+    }
+    
+
+
+
+
+
+
+
+/* Product Categories Styles */
+.product-categories {
+    text-align: center; /* Center the main heading */
+    color: #000000;
+    padding: 50px 0; /* Add padding above and below */
+}
+
+.main-heading {
+    margin-bottom: 20px; /* Add margin below the main heading */
+}
+
+.category-container {
+    display: flex; /* Use flexbox */
+    justify-content: space-around; /* Distribute items evenly */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
+}
+
+.category {
+    width: calc(33.33% - 20px); /* Adjust width to fit three items per row */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px; /* Add some space between items */
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent; /* Add transparent border initially */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Add border-color transition */
+    
+}
+
+.category img {
+    max-width: 90%; /* Ensure the image doesn't exceed the width of the box */
+    max-height: 180px; /* Adjust the maximum height as needed */
+    border-radius: 10px;
+}
+
+.product-categories h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #fff; /* Neon color */
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+}
+
+
+.category h3 {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.category p {
+    color: #666;
+}
+
+.category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    border-color: #00ff95; /* Change border color on hover */
+}
+
+.category:hover img {
+    filter: brightness(0.8); /* Adjust brightness for hover effect */
+}
+
+.category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00ff95; /* Neon color */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.category:hover:before {
+    opacity: 1;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertically center the images */
+    gap: 10px; /* Adjust the gap between images */
+}
+
+.images img {
+    max-width: 100%;
+    max-height: 100px; /* Adjust the maximum height of images */
+    border-radius: 5px;
+}
+
+.details {
+    margin-top: 10px;
+}
+
+
+/*  SEO  */
+
+.seo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #ffffff; /* Color for the main heading */
+    margin-bottom: 20px;
+}
+
+.seo-section h2 {
+    margin-bottom: 20px;
+}
+
+.seo-section p {
+    color: #e69494; /* Color for the paragraph */
+}
+
+/* PROMO BANNER */
+.promo-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2; /* Background color for the section */
+    padding: 50px 0; /* Adjust padding as needed */
+}
+
+.promo-content {
+    text-align: center;
+    margin-right: 50px; /* Space between content and image */
+}
+
+.promo-content h2 {
+    color: #333; /* Color for the header */
+    margin-bottom: 10px;
+}
+
+.promo-content p {
+    color: #666; /* Color for the description */
+}
+
+.promo-image {
+    /* Style the image container */
+}
+
+
+
+/* Footer Styles */
+footer {
+    background-color: #f5a9a9;
+    color: #0c0000;
+    text-align: center;
+    
+    padding: 3rem 0;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #070000;
+}
+
+.footer-links ul li a:hover {
+    color: #f00000;
+}
+
+.social-media {
+    margin-top: 20px;
+}
+.social-icons a img {
+    width: 40px; /* Adjust width as needed */
+    height: 40px; /* Adjust height as needed */
+}
+
+
+/* social media */
+
+.social-media a {
+    color: #fff;
+    margin: 0 10px;
+}
+
+.social-media a:hover {
+    color: #5DB9EE;
+}
+
+.newsletter input[type="email"],
+.newsletter button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.newsletter input[type="email"] {
+    width: 200px;
+    margin-right: 10px;
+}
+
+.newsletter button {
+    background-color: #5DB9EE;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+.hidden {
+    display: none; /* Hide the element by default */
+}
+
+
+.container .card .face.face1 {
+    position: relative;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+.container.card:hover .face.face1 {
+    background: #ff0057;
+    transform: translateY(0px);
+
+}
+
+.container .card .face.face1 .content i {
+    max-width: 100px;
+} 
+
+.container.card .face.face2 {
+    position: relative;
+    background: #fff;
+    direction: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgb(0, 0, 0,0.8);
+    transform: translateY(100px);
+}
+
+.container .card:hover .face.face2 {
+    transform: translateY(0);
+}
+
+
+
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subscribe-section {
+    /* Add margin or padding to create space */
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adjust as needed */
+}
+
+.social-icons a {
+    margin-right: 10px; /* Adjust as needed */
+}
+
+
+
+/* For screens smaller than 768px */
+@media screen and (max-width: 768px) {
+    /* Adjust the hero banner padding */
+    .hero-banner {
+        padding: 50px 20px;
+    }
+
+    /* Adjust the main heading font size in product categories */
+    .main-heading {
+        font-size: 24px;
+    }
+
+    /* Adjust the width of category items to fit two items per row */
+    .category {
+        width: calc(50% - 20px);
+    }
+
+    /* Adjust the font size of the social media icons */
+    .social-media a img {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Adjust the font size of the newsletter input and button */
+    .newsletter input[type="email"] {
+        width: 150px;
+    }
+    .newsletter button {
+        font-size: 16px;
+    }
+}
+
+/* For screens smaller than 480px */
+@media screen and (max-width: 480px) {
+    /* Adjust the font size of the hero banner content */
+    .hero-content h1 {
+        font-size: 24px;
+    }
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    /* Adjust the font size of the featured products heading */
+    .featured-products-heading {
+        font-size: 24px;
+    }
+
+    /* Adjust the font size of the SEO section */
+    .seo-section h2 {
+        font-size: 24px;
+    }
+    .seo-section p {
+        font-size: 14px;
+    }
+
+    /* Adjust the font size of the promo banner content */
+    .promo-content h2 {
+        font-size: 24px;
+    }
+    .promo-content p {
+        font-size: 14px;
+    }
+
+    /* Adjust the font size of the footer links */
+    .footer-links ul li a {
+        font-size: 14px;
+    }
+
+    /* Adjust the font size of the newsletter input and button */
+    .newsletter input[type="email"] {
+        width: 120px;
+    }
+    .newsletter button {
+        font-size: 14px;
+    }
+}

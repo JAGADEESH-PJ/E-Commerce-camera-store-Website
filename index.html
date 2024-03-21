@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <div class="portfolio-container">
+        <ul class="navlist">
+            <li><a href="#" class="active">HOME</a></li>
+            <li><a href="#">WORK</a></li>
+            <li><a href="#">ABOUT</a></li><!-- Link to about.html -->
+            <li><a href="#">SALES</a></li>
+            <li><a href="#">Service</a></li>
+        </ul>
+        <script>
+            // Get the navigation list
+            const navlist = document.getElementById('navlist');
+            
+            // Add event listeners to each menu item to handle hover effect
+            const menuItems = navlist.querySelectorAll('li');
+            menuItems.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    item.querySelector('a').style.color = '#fff'; // Change text color on hover
+                    item.querySelector('a').style.backgroundColor = '#333'; // Change background color on hover
+                });
+                item.addEventListener('mouseleave', () => {
+                    item.querySelector('a').style.color = '#333'; // Reset text color on mouse leave
+                    item.querySelector('a').style.backgroundColor = 'transparent'; // Reset background color on mouse leave
+                });
+            });
+            
+        </script>
+
+        
+
+        <header class="hero-banner">
+            <div class="hero-content">
+                <h1>Find Best Products</h1>
+                <p>Explore World Throgh Fine Lense</p>
+                <button class="shop-now-button">SHOP NOW</button>
+            </div>
+        </header>
+
+
+
+        <section class="product-categories">
+            <h2 class="main-heading"> Product Catogeries </h2>
+            <div class="category-container">
+                <div class="category">
+                    <img src="DSLR.jpg" alt="cannon2">
+                    <h3>DSLR (Digital Single Lens Reflex) Cameras</h3>
+                    <p>DSLR cameras offer the highest quality images with manual control options.
+                    It is ideal for serious photographers or those who want to capture fine details
+                    product image.</p>
+                </div>
+                <div class="category">
+                    <img src="mirrorless.jpg" alt="Category 2">
+                    <h3>Mirror-less Cameras</h3>
+                    <p>These cameras are compact and lightweight, making them a popular choice for travel and street photography. They offer excellent image quality and a wide range of interchangeable lenses.</p>
+                </div>
+                <div class="category">
+                    <img src="camera-accessories.jpg" alt="Category 3">
+                    <h3>Camera Accessories</h3>
+                    <p>This category includes a variety of items such as lenses, tripods, memory cards, and camera bags. These accessories can improve the performance of the camera and enhance the shooting experience.
+
+
+
+
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="featured-products">
+            
+            <style>
+                .featured-products-container {
+                    text-align: center;
+                    margin-bottom: 50px; /* Add margin to create space between sections */
+                }
+        
+                .featured-products-heading {
+                    font-size: 36px;
+                    margin-bottom: 50px;
+                    color: #fff; /* Neon effect color */
+                    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #0ff, 0 0 70px #0ff, 0 0 80px #0ff, 0 0 100px #0ff, 0 0 150px #0ff; /* Neon effect */
+                }
+        
+                .slider {
+                    width: 80%; /* Adjust slider width as needed */
+                    margin: 0 auto;
+                    overflow: hidden;
+                    position: relative;
+                }
+        
+                .slides {
+                    display: flex;
+                    transition: transform 0.5s ease;
+                }
+        
+                .slides img {
+                    width: 80%; /* Adjust image size */
+                    height: auto;
+                    border-radius: 20px; /* Add border radius */
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add box shadow */
+                    position: relative;
+                    z-index: 1;
+                    margin: 0 5px; /* Add margin to adjust the spacing between images */
+                    cursor: pointer; /* Add pointer cursor */
+                    transition: transform 0.3s ease; /* Add transition effect */
+                }
+
+                .slides img:hover {
+                    transform: scale(1.1); /* Scale up the image on hover */
+                }
+
+                .cta-button {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background-color: #fff;
+                    color: #000;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    text-decoration: none;
+                    transition: opacity 0.3s ease;
+                    opacity: 0; /* Initially hidden */
+                    z-index: 2; /* Ensure button is above image */
+                }
+
+                .slides img:hover + .cta-button {
+                    opacity: 0; /* Show button on hover */
+                }
+
+                .slide-mask {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 20%;
+                    height: 100%;
+                    border-radius: 20px; /* Add border radius */
+                    background: linear-gradient(to right, transparent, black); /* Add gradient for edge cut effect */
+                    z-index: 2;
+                }
+
+                .slide-mask.right {
+                    right: 0;
+                    left: auto;
+                    background: linear-gradient(to left, transparent, black); /* Add gradient for edge cut effect */
+                }
+            </style>
+            <div class="featured-products-container">
+                <h2 class="featured-products-heading"> Featured Products </h2>
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide-mask"></div>
+                        <img src="1.jpg" alt="Featured Product 1">
+                        <div class="slide-mask right"></div>
+                        <div class="slide-mask"></div>
+                        <img src="2.jpg" alt="Featured Product 2">
+                        <div class="slide-mask right"></div>
+                        <div class="slide-mask"></div>
+                        <img src="3.jpg" alt="Featured Product 3">
+                        <div class="slide-mask right"></div>
+                        <div class="slide-mask"></div>
+                        <img src="4.jpg " alt="Featured Product 4">
+                        <div class="slide-mask right"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <script>
+                let slideIndex = 0;
+                showSlides();
+            
+                function showSlides() {
+                    let i;
+                    let slides = document.querySelectorAll('.slides img');
+            
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";  
+                    }
+            
+                    slideIndex++;
+            
+                    if (slideIndex > slides.length) {slideIndex = 1}    
+            
+                    slides[slideIndex - 1].style.display = "block";  
+            
+                    setTimeout(showSlides, 2000); // Change image every 2 seconds
+                }
+            </script>
+        </section>
+        <section class="seo-section">
+            <h2> SEO Optimization </h2>
+            <p>Welcome to our premier e-commerce platform for all your camera needs. We offer high-quality cameras, from DSLRs to mirrorless, compact, and action cameras. Our store features brands like Canon, Nikon, Sony, and GoPro, ensuring you find the perfect match for your photography style. Whether you're a professional photographer or a hobbyist, our extensive collection caters to all levels of expertise. We also provide a variety of lenses, tripods, and other accessories to enhance your photography experience. Enjoy seamless navigation, secure payment options, and swift delivery services on our user-friendly site. Our dedicated customer service team is always ready to assist you in making informed decisions. Explore our store today and capture your world through a superior-quality lens. Elevate your photography journey with us, your one-stop shop for all things camera-related. Remember, every picture tells a story, let ours be about delivering the best camera equipment to you.</p>
+            <img src="seo_image.jpg" alt="SEO Image">
+        </section>
+        <section class="promo-banner">
+            <div class="promo-content">
+                <h2> Promo banner </h2>
+                <p>Discover our special offers and discounts here !</p>
+            </div>
+            <div class="promo-image">
+                <!-- Image goes here -->
+            </div>
+        </section>
+        
+        
+
+        
+        <footer class="footer">
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#" onclick="toggleAbout(event)">About Us</a></li>
+                    <li><a href="#" onclick="toggleContact(event)">Contact</a></li>
+                    <li><a href="#" onclick="toggleFAQ(event)">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="social-media">
+                <!-- Social media icons go here -->
+            </div>
+            <div class="newsletter">
+                <form action="#" method="post">
+                    <input type="email" name="email" placeholder="Your Email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            <div id="about-info" class="hidden">
+                <p>At Coalition Technologies, we are passionate about bringing the world of photography closer to you. With quality, innovation and customer satisfaction, we strive to be a trusted partner in capturing life's precious moments.</p>
+            </div>
+            <div id="contact-info" class="hidden">
+                <p>Go here for contact information.</p>
+            </div>
+            <div id="faq-info" class="hidden">
+                <p>Frequently asked questions and answers here.</p>
+            </div>
+            
+
+        <script>
+            function toggleAbout(event) {
+            event.preventDefault(); // Prevent default behavior of the anchor tag
+            var aboutInfo = document.getElementById('about-info');
+            aboutInfo.classList.toggle('hidden');
+            }
+
+            function toggleContact(event) {
+            event.preventDefault(); // Prevent default behavior of the anchor tag
+            var contactInfo = document.getElementById('contact-info');
+            contactInfo.classList.toggle('hidden');
+            }
+
+            function toggleFAQ(event) {
+            event.preventDefault(); // Prevent default behavior of the anchor tag
+            var faqInfo = document.getElementById('faq-info');
+            faqInfo.classList.toggle('hidden');
+            }
+        </script>
+
+
+         <div class="social-icons">
+            <a href="https://www.facebook.com/YourPage" target="_blank"><img src="facebook.png" alt="Facebook"></a>
+            <a href="https://twitter.com/YourPage" target="_blank"><img src="twitter.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com/YourPage" target="_blank"><img src="inst.png" alt="Instagram"></a>
+            <!-- Add more social media icons as needed -->
+        </div>
